@@ -1,0 +1,10 @@
+{
+  "trailingComma": "es5",
+  "tabWidth": 2,
+  "semi": true,
+  "singleQuote": true,
+  "endOfLine": "auto",
+  "importOrder": ["^react(.*)$", "^(?!.*(react|@|[./]))", "^@mui/(material|styles)", "^@/(.*)$", "^@mui/icons-material", "^[./]"],
+  "importOrderSeparation": true,
+  "experimentalBabelParserPluginsList" : ["jsx"]
+}
