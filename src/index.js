@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import axios from 'axios';
 
-import Layout from '@/components/Layout';
+import Provider from '@/components/Provider';
 
 // import reportWebVitals from './reportWebVitals';
 import App from './App';
@@ -12,9 +12,9 @@ axios.defaults.headers.common['Content-Type'] = 'application/json';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Layout>
+    <Provider>
       <App />
-    </Layout>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
