@@ -1,11 +1,15 @@
 ---
 to: <%= abs_path %>/<%= component_name %>.tsx
 ---
-import React from "react";
 <% if (have_style) { -%>
-import style from "./style.module.css"
+import styled, { css } from 'styled-components'
 <% } -%>
+
+export const type = '<%= category %>/<%= snake_name %>';
+
 <% if (have_hooks) { -%>
+// ______________________________________________________
+//
 import { useDependencies } from './dependencies'
 <% } -%>
 <% if (have_props) { -%>
@@ -22,10 +26,17 @@ export const <%= component_name %>: <%- type_annotate %> = <%= props %> => {
 <% } -%>
   return (
 <% if (have_style) { -%>
-    <<%= tag %> className={style.module}>
+    <St<%= component_name %>>
+    </St<%= component_name %>>
 <% } else { -%>
     <<%= tag %>>
-<% } -%>
     </<%= tag %>>
+<% } -%>
   );
 }
+<% if (have_style) { -%>
+
+const St<%= component_name %> = styled.<%= tag %>`
+  ${({theme}) => css``}
+`
+<% } -%>
