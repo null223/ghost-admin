@@ -5,19 +5,19 @@ to: <%= abs_path %>/<%= component_name %>.tsx
 import styled, { css } from 'styled-components'
 <% } -%>
 
-export const type = '<%= category %>/<%= snake_name %>';
+export const id = '<%= category %>/<%= snake_name %>';
 
 <% if (have_hooks) { -%>
 // ______________________________________________________
 //
 import { useDependencies } from './dependencies'
 <% } -%>
-<% if (have_props) { -%>
+
 // ______________________________________________________
 //
 export type Props = {
 };
-<% } -%>
+
 // ______________________________________________________
 //
 export const <%= component_name %>: <%- type_annotate %> = <%= props %> => {
