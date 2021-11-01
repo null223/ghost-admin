@@ -32,6 +32,11 @@ module.exports = {
       // },
       {
         type: 'confirm',
+        name: 'is_memo',
+        message: 'Is it using memo?',
+      },
+      {
+        type: 'confirm',
         name: 'have_hooks',
         message: 'Is it have hooks?',
       },

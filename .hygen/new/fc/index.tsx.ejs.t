@@ -1,4 +1,4 @@
 ---
 to: <%= abs_path %>/index.tsx
 ---
-export { <%= component_name %>, type } from './<%= component_name %>'
+export { default as <%= component_name %>, id } from './<%= component_name %>';

@@ -1,39 +1,55 @@
 ---
 to: <%= abs_path %>/<%= component_name %>.tsx
 ---
-<% if (have_style) { -%>
-import styled, { css } from 'styled-components'
+<% if (is_memo) { -%>
+import { memo } from 'react';
 <% } -%>
-
-export const id = '<%= category %>/<%= snake_name %>';
-
+<% if (have_style) { -%>
+import styled, { css } from 'styled-components';
+<% } -%>
 <% if (have_hooks) { -%>
+import { useDependencies } from './dependencies';
+<% } -%>
+import type { WithIdFC } from '@/components/Component';
+
 // ______________________________________________________
 //
-import { useDependencies } from './dependencies'
-<% } -%>
+export const id = '<%= category %>/<%= snake_name %>';
+
 
 // ______________________________________________________
 //
 export type Props = {
+  children?: React.ReactNode
 };
 
 // ______________________________________________________
 //
-export const <%= component_name %>: <%- type_annotate %> = <%= props %> => {
+export const <%= component_name %>: WithIdFC<Props> = ({children}) => {
 <% if (have_hooks) { -%>
   const deps = useDependencies<%= props %>
 <% } -%>
   return (
 <% if (have_style) { -%>
     <St<%= component_name %>>
+      {children}
     </St<%= component_name %>>
 <% } else { -%>
     <<%= tag %>>
+      {children}
     </<%= tag %>>
 <% } -%>
   );
 }
+
+<% if (is_memo) { -%>
+export default memo(<%= component_name %>);
+<% } else { -%>
+export default <%= component_name %>;
+<% } -%>
+
+<%= component_name %>.id = id;
+
 <% if (have_style) { -%>
 
 const St<%= component_name %> = styled.<%= tag %>`

@@ -1,12 +1,18 @@
 ---
 to: <%= abs_path %>/<%= component_name %>.stories.tsx
 ---
-import { <%= component_name %>, id } from "./";
+import { <%= component_name %> } from "./";
+// ______________________________________________________
+//
+const mock = {
+  components: []
+};
+
 // ______________________________________________________
 //
 export default {
-  title: id,
+  title: <%= component_name %>.id,
   component: <%= component_name %>,
-}
+};
 
-export const Default = {};
+export const Default = { args: { ...mock } };

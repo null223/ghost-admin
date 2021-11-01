@@ -2,10 +2,10 @@
 to: <%= abs_path %>/<%= component_name %>.test.tsx
 ---
 import renderer from "react-test-renderer";
-import { <%= component_name %>, id } from "./";
+import { <%= component_name %> } from "./";
 // ______________________________________________________
 //
-describe(id, () => {
+describe(<%= component_name %>.id, () => {
   it("Snap Shot", () => {
     const component = renderer.create(<<%= component_name %> />);
     const tree = component.toJSON();
