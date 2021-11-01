@@ -7,18 +7,20 @@ import { createTheme } from '@mui/material/styles';
 // and get from styled-components theme
 const theme = createTheme({
   palette: {
+    background: {
+      default: blue[50],
+    },
     primary: {
       main: amber[500],
     },
-    //   // main: '',
-    // }
   },
 });
 
 export const GlobalStyle = createGlobalStyle`
   body {
-    background-color: ${blue[50]}
+    // background-color: ${blue[50]}
   }
 `;
 
 export default theme;
+console.log(theme);
