@@ -1,0 +1,18 @@
+type TitleSection {
+  title: String!
+  titleStyle: String!
+
+  # Optional subtitle
+  subtitle: String
+  subtitleStyle: String
+
+  # Action to be taken when tapping the optional subtitle
+  onSubtitleClickAction: IAction
+}
+
+extend enum SectionComponentType {
+  TITLE
+  PLUS_TITLE
+}
+
+extend union Section = TitleSection

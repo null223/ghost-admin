@@ -1,12 +1,16 @@
 ---
 to: <%= abs_path %>/<%= component_name %>.stories.tsx
 ---
+import BaseComponent from '@/components/Component';
+
 import { <%= component_name %> } from "./";
 // ______________________________________________________
 //
 const mock = {
   components: []
 };
+
+const children = mock.components.map(BaseComponent);
 
 // ______________________________________________________
 //
@@ -15,4 +19,4 @@ export default {
   component: <%= component_name %>,
 };
 
-export const Default = { args: { ...mock } };
+export const Default = { args: { ...mock, children } };

@@ -1,6 +1,9 @@
 import React, { Fragment, ReactNode } from 'react';
 
+import { AppBrand } from '@/components/common/AppBrand';
+import { AppTitle } from '@/components/common/AppTitle';
 import { Header } from '@/components/common/Header';
+import { Sidebar } from '@/components/common/Sidebar';
 
 // ______________________________________________________
 //
@@ -13,7 +16,7 @@ export type Props = {
 };
 
 export type WithIdFC<P = {}> = React.FC & {
-  id: string;
+  id?: string;
 };
 
 const findComponent = (type: string) => {
@@ -21,8 +24,18 @@ const findComponent = (type: string) => {
     case Header.id:
       return Header;
       break;
+    case Sidebar.id:
+      return Sidebar;
+      break;
+    case AppBrand.id:
+      return AppBrand;
+      break;
+    case AppTitle.id:
+      return AppTitle;
+      break;
     default:
-      return Fragment;
+      // throw Error('undefined Component.');
+      return () => <Fragment>{'undefined Component: ' + type}</Fragment>;
   }
 };
 

@@ -1,0 +1,1 @@
+export { default as AppTitle, id } from './AppTitle';

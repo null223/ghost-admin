@@ -1,0 +1,10 @@
+type HeroSection {
+  # Image urls
+  images: [String]!
+}
+
+extend enum SectionComponentType {
+  HERO
+}
+
+extend union Section = HeroSection

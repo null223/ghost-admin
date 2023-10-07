@@ -1,0 +1,4 @@
+type ToggleAction implements IAction {
+  name: String!
+  default: Boolean!
+}

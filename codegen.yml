@@ -1,0 +1,8 @@
+# overwrite: true
+schema: ./src/graphql/schema.graphql
+# documents: "./src/graphql/**/*.graphql"
+generates:
+  lib/types/ghosts.ts:
+    schema: ./src/graphql/**/*.graphql
+    plugins:
+      - "typescript"

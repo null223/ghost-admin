@@ -1,0 +1,1 @@
+export { default as AppBrand, id } from './AppBrand';

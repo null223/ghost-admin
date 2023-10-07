@@ -1,0 +1,1 @@
+export { default as Sidebar, id } from './Sidebar';

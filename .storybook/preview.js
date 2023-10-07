@@ -17,6 +17,10 @@ export const parameters = {
       { name: 'black', value: '#000' },
     ],
   },
+  storyFilter: (storyData) => {
+    return !storyData.type;
+  },
+  layout: 'fullscreen',
 };
 
 export const decorators = [

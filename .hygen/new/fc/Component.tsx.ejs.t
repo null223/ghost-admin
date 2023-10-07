@@ -25,7 +25,7 @@ export type Props = {
 
 // ______________________________________________________
 //
-export const <%= component_name %>: WithIdFC<Props> = ({children}) => {
+export const <% if (is_memo) { -%>_<% } -%><%= component_name %>: WithIdFC<Props> = ({children}) => {
 <% if (have_hooks) { -%>
   const deps = useDependencies<%= props %>
 <% } -%>
@@ -43,12 +43,14 @@ export const <%= component_name %>: WithIdFC<Props> = ({children}) => {
 }
 
 <% if (is_memo) { -%>
-export default memo(<%= component_name %>);
-<% } else { -%>
-export default <%= component_name %>;
+const <%= component_name %>: React.NamedExoticComponent<{}> & {
+  id?: string;
+} = memo(_<%= component_name %>);
 <% } -%>
 
 <%= component_name %>.id = id;
+
+export default <%= component_name %>;
 
 <% if (have_style) { -%>
 

@@ -4,6 +4,8 @@ import { AppBar, Toolbar } from '@mui/material';
 
 import type { WithIdFC } from '@/components/Component';
 
+// ______________________________________________________
+//
 export const id = 'common/header';
 
 // ______________________________________________________
@@ -14,7 +16,7 @@ export type Props = {
 
 // ______________________________________________________
 //
-export const Header: WithIdFC<Props> = ({ children }) => {
+export const _Header: WithIdFC<Props> = ({ children }) => {
   return (
     <AppBar>
       <Toolbar>{children}</Toolbar>
@@ -22,6 +24,10 @@ export const Header: WithIdFC<Props> = ({ children }) => {
   );
 };
 
-export default memo(Header);
+const Header: React.NamedExoticComponent<{}> & {
+  id?: string;
+} = memo(_Header);
 
 Header.id = id;
+
+export default Header;

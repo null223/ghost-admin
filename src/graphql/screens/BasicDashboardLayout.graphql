@@ -1,0 +1,11 @@
+type BasicDashboardLayout implements ILayout {
+  type: "BasicDashboardLayout"
+
+  header: MultipleSectionsPlacement
+
+  main: MultipleSectionsPlacement
+
+  sidebar: MultipleSectionsPlacement
+}
+
+extend union Screen = BasicDashboardLayout

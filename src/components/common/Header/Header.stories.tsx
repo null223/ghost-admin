@@ -1,4 +1,9 @@
 import BaseComponent from '@/components/Component';
+import { id as AppBrandId } from '@/components/common/AppBrand';
+import { Mock as AppBrandMock } from '@/components/common/AppBrand/AppBrand.stories';
+import { Mock as AppTitleMock } from '@/components/common/AppTitle/AppTitle.stories';
+import { Mock as UserMenuMock } from '@/components/model/UserMenu/UserMenu.stories';
+import { Mock as SpacerMock } from '@/components/ui/Spacer/Spacer.stories';
 
 import { Header } from './';
 
@@ -9,21 +14,14 @@ const app_name = 'Ghost Admin';
 
 const mock = {
   components: [
-    {
-      type: 'common/app_brand',
-      props: {
-        images: './logo192.png',
-      },
-    },
-    {
-      type: 'common/app_title',
-      title: app_name,
-    },
+    AppBrandMock,
+    AppTitleMock,
     {
       type: 'ui/spacer',
+      props: {},
     },
     {
-      type: 'model/app_user_menu',
+      type: 'model/user_menu',
       props: {
         user: {
           id: 1,
@@ -45,6 +43,8 @@ const mock = {
     },
   ],
 };
+
+const children = mock.components.map(BaseComponent);
 // ______________________________________________________
 //
 
@@ -53,4 +53,4 @@ export default {
   component: Header,
 };
 
-export const Default = { args: { ...mock } };
+export const Default = { args: { ...mock, children } };

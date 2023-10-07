@@ -10,9 +10,7 @@ const theme = createTheme({
     background: {
       default: blue[50],
     },
-    primary: {
-      main: amber[500],
-    },
+    primary: amber,
   },
 });
 
